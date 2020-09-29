@@ -1,9 +1,16 @@
-import User from '../models/User'
 import jwt from 'jsonwebtoken'
+import {validationResult} from 'express-validator'
+import User from '../models/User'
 import config from '../config'
 
 export const signIn = async (req, res) => {
-    // validate dni
+    // validate
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+        return res.status(422).json({ errors: errors.array() })
+    }
+
+    // validate exits user
     const user = await User({skipTenant: true}).findOne({dni: req.body.username});
     if (!user){
         return res.status(400).json({
@@ -22,7 +29,6 @@ export const signIn = async (req, res) => {
     // return token
     const token = jwt.sign({id: user._id}, config.secret)
     res.status(200).json({
-        message: 'auth succcess',
         data: {token: token}
     })
 

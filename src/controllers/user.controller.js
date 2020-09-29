@@ -1,24 +1,25 @@
+import {validationResult} from 'express-validator'
 import Role from '../models/Role';
 import User from '../models/User'
 import Planning from '../models/Planning'
 import Routine from '../models/Routine'
-
+// import {setCurrentTenantId} from '../libs/storage';
 
 // user administrator
-export const getUsers = async (req, res) => {
-    const users = await User.find();
+export const getAdministrators = async (req, res) => {
+    const role = await Role().findOne({name: 'administrator'});
+    const users = await User({skipTenant: true}).find({role:role._id});
     res.status(200).json({data: users})
 }
 
-export const getUserById = async (req, res) => {
-    await User.findById(req.params.id,
+export const getAdministratorById = async (req, res) => {
+    await User({skipTenant: true}).findById(req.params.id,
         function (err, docs) {
             if (err){
                 res.status(400).json(err);
             }
             else{
                 res.status(200).json({
-                    message: 'users list',
                     data: docs
                 });
             }
@@ -26,46 +27,36 @@ export const getUserById = async (req, res) => {
     );
 }
 
-export const createUser = async (req, res) => {
-    const {email, dni, password, name, role} = req.body 
-    const user = new User({
+export const createAdministrator = async (req, res) => {
+
+    const role = await Role().findOne({name: 'administrator'});
+    const {email, dni, password, name, organization} = req.body 
+    // setCurrentTenantId(organization);
+    const user = new User()({
         email,
         dni,
-        password: await User.encryptPassword(password),
+        password: await User().encryptPassword(password),
         name,
-        role
+        role: role._id,
+        organization: organization
     })
 
-    if (role){
-        const foundRole = await Role.findOne({name: role})
-        if (foundRole){
-            user.role = foundRole._id
-        }
-        
-        // `Role: ${role} does not exists`
-        await user.save(
-            function(err, result){ 
-                if (err){
-                    res.status(400).json(err);
-                }else{
-                    res.status(201).json({
-                        message: 'user created',
-                        data: result
-                    });
-                }
+    await user.save(
+        function(err, result){ 
+            if (err){
+                res.status(400).json(err);
+            }else{
+                res.status(201).json({
+                    message: 'administrator created',
+                    data: result
+                });
             }
-        )
-    }
-    else{
-        res.status(400).json({
-            message: 'role not found',
-        });
-    }
-
+        }
+    )
 }
 
-export const updateUserById = async (req, res) => {
-    await User.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators: true},
+export const updateAdministratorById = async (req, res) => {
+    await User({skipTenant: true}).findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators: true},
         function (err, docs) {
             if (err){
                 res.status(400).json(err)
@@ -80,8 +71,8 @@ export const updateUserById = async (req, res) => {
     );
 }
 
-export const deleteUserById = async (req, res) => {
-    await User.findByIdAndRemove(req.params.id,
+export const deleteAdministratorById = async (req, res) => {
+    await User({skipTenant: true}).findByIdAndRemove(req.params.id,
         function (err, docs) { 
             if (err){
                 res.status(400).json(err)
@@ -178,6 +169,12 @@ export const deletePatientById = async (req, res) => {
 }
 
 export const searchPatient = async (req, res) => {
+
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+        return res.status(422).json({ errors: errors.array() })
+    }
+
     const {dni} = req.body
     await User().findOne({dni:dni},
         function (err, docs) {

@@ -4,13 +4,14 @@ const router = Router();
 import * as userController from '../controllers/user.controller'
 import {verifyToken} from '../middlewares/authentication'
 import permit from '../middlewares/authentication'
+import {patientSearchValidator} from '../middlewares/validators'
 
 // administrator
-router.get('/administrator/list', [verifyToken, permit('superuser')], userController.getUsers)
-router.get('/administrator/list/:id', [verifyToken, permit('superuser')], userController.getUserById)
-router.post('/administrator/create', [verifyToken, permit('superuser')], userController.createUser)
-router.put('/administrator/update/:id', [verifyToken, permit('superuser')], userController.updateUserById)
-router.delete('/administrator/delete/:id', [verifyToken, permit('superuser')], userController.deleteUserById)
+router.get('/administrator/list', [verifyToken, permit('superadmin')], userController.getAdministrators)
+router.get('/administrator/list/:id', [verifyToken, permit('superadmin')], userController.getAdministratorById)
+router.post('/administrator/create', [verifyToken, permit('superadmin')], userController.createAdministrator)
+router.put('/administrator/update/:id', [verifyToken, permit('superadmin')], userController.updateAdministratorById)
+router.delete('/administrator/delete/:id', [verifyToken, permit('superadmin')], userController.deleteAdministratorById)
 
 // patient
 router.get('/patient/list', [verifyToken, permit('administrator')], userController.getPatients)
@@ -20,7 +21,7 @@ router.put('/patient/update/:id', [verifyToken, permit('administrator')], userCo
 router.delete('/patient/delete/:id', [verifyToken, permit('administrator')], userController.deletePatientById)
 
 // search patient by dni
-router.get('/patient/search', [verifyToken, permit('administrator')], userController.searchPatient)
+router.get('/patient/search', [verifyToken, permit('administrator'), patientSearchValidator()], userController.searchPatient)
 
 // search all planning by patient
 router.get('/patient/plannings/:id', [verifyToken, permit('administrator, patient')], userController.searchPlannings)

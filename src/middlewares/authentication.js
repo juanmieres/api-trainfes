@@ -1,6 +1,7 @@
 import jwt, { decode } from 'jsonwebtoken'
 import config from '../config'
 import User from '../models/User'
+import Role from '../models/Role'
 import {setCurrentTenantId} from '../libs/storage';
 
 export const verifyToken = async(req, res, next) => {
@@ -16,7 +17,8 @@ export const verifyToken = async(req, res, next) => {
         // validate user token
         const decoded = jwt.verify(token, config.secret);
         req.userId = decoded.id;
-        const user = await User({skipTenant: true}).findById(req.userId, {passowrd: 0}).populate('role')
+        const user = await User({skipTenant: true}).findById(req.userId, {passowrd: 0})
+        const role = await Role().findById(user.role)
         if (!user) {
             return res.status(404).json({
                 message: 'token invalid'
@@ -24,7 +26,7 @@ export const verifyToken = async(req, res, next) => {
         }
 
         // update tenandId
-        if (user && ['administrator', 'patient'].includes(user.role.name)) {
+        if (user && ['administrator', 'patient'].includes(role.name)) {
             req.organizationId = user.organization._id.toString();
             const tenantId = user.organization._id.toString();
             setCurrentTenantId(tenantId);
