@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "5f722c0868b7294589f8e27a"
+  },
+  "name": "Teletón",
+  "license": "premium",
+  "location": "Av Libertador Bernardo O'Higgins, Santiago, Estación Central, Región Metropolitana",
+  "phone": "+56226772000",
+  "createdAt": {
+    "$date": "2020-09-28T18:31:36.500Z"
+  },
+  "updatedAt": {
+    "$date": "2020-09-28T18:31:36.500Z"
+  }
+}]

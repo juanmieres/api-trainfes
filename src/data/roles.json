@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "5f722c0868b7294589f8e277"
+  },
+  "name": "superadmin"
+},{
+  "_id": {
+    "$oid": "5f722c0868b7294589f8e278"
+  },
+  "name": "administrator"
+},{
+  "_id": {
+    "$oid": "5f722c0868b7294589f8e279"
+  },
+  "name": "patient"
+}]

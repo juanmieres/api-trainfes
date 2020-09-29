@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to API TrainFes 👋</h1>
+<h1>Welcome to API TrainFes 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://documenter.getpostman.com/view/9854295/TVKHUvFa" target="_blank">
@@ -17,7 +17,7 @@ npm install
 ## Usage
 
 ```sh
-npm run start
+npm run dev
 ```
 
 ## Author
@@ -26,6 +26,10 @@ npm run start
 
 * Website: https://jmieres.com
 * Github: [@juanmieres](https://github.com/juanmieres)
+
+## Documentation
+
+*POSTMAN: [link](https://documenter.getpostman.com/view/9854295/TVKHUvFa)
 
 ## Show your support
 

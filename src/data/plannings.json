@@ -1,0 +1,144 @@
+[{
+  "_id": {
+    "$oid": "5f726a9f93558d635ccf1fd6"
+  },
+  "media": [
+    ""
+  ],
+  "dates": [
+    {
+      "$date": "2020-01-10T03:00:00Z"
+    },
+    {
+      "$date": "2020-01-11T03:00:00Z"
+    },
+    {
+      "$date": "2020-01-12T03:00:00Z"
+    }
+  ],
+  "routines": [
+    {
+      "$oid": "5f7266bbf3745e620b615d8b"
+    }
+  ],
+  "tenantId": "Planning-5f722c0868b7294589f8e27a",
+  "name": "Planificación 1",
+  "patient": {
+    "$oid": "5f72662bf3745e620b615d89"
+  },
+  "createdAt": {
+    "$date": "2020-09-28T22:58:39.994Z"
+  },
+  "updatedAt": {
+    "$date": "2020-09-28T22:58:39.994Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f726ace93558d635ccf1fd7"
+  },
+  "media": [
+    ""
+  ],
+  "dates": [
+    {
+      "$date": "2020-01-10T03:00:00Z"
+    },
+    {
+      "$date": "2020-01-11T03:00:00Z"
+    },
+    {
+      "$date": "2020-01-12T03:00:00Z"
+    }
+  ],
+  "routines": [
+    {
+      "$oid": "5f7266bbf3745e620b615d8b"
+    }
+  ],
+  "tenantId": "Planning-5f722c0868b7294589f8e27a",
+  "name": "Planificación 1",
+  "patient": {
+    "$oid": "5f72663df3745e620b615d8a"
+  },
+  "createdAt": {
+    "$date": "2020-09-28T22:59:26.531Z"
+  },
+  "updatedAt": {
+    "$date": "2020-09-28T22:59:26.531Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f726b0d93558d635ccf1fd8"
+  },
+  "media": [
+    ""
+  ],
+  "dates": [
+    {
+      "$date": "2021-01-01T03:00:00Z"
+    },
+    {
+      "$date": "2021-01-02T03:00:00Z"
+    }
+  ],
+  "routines": [
+    {
+      "$oid": "5f7266ddf3745e620b615d8d"
+    },
+    {
+      "$oid": "5f7266eef3745e620b615d8e"
+    }
+  ],
+  "tenantId": "Planning-5f722c0868b7294589f8e27a",
+  "name": "Planificación 2",
+  "patient": {
+    "$oid": "5f72662bf3745e620b615d89"
+  },
+  "createdAt": {
+    "$date": "2020-09-28T23:00:29.529Z"
+  },
+  "updatedAt": {
+    "$date": "2020-09-28T23:00:29.529Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f726b2193558d635ccf1fd9"
+  },
+  "media": [
+    ""
+  ],
+  "dates": [
+    {
+      "$date": "2021-01-01T03:00:00Z"
+    },
+    {
+      "$date": "2021-01-02T03:00:00Z"
+    }
+  ],
+  "routines": [
+    {
+      "$oid": "5f7266ddf3745e620b615d8d"
+    },
+    {
+      "$oid": "5f7266eef3745e620b615d8e"
+    },
+    {
+      "$oid": "5f7266fdf3745e620b615d8f"
+    }
+  ],
+  "tenantId": "Planning-5f722c0868b7294589f8e27a",
+  "name": "Planificación 2",
+  "patient": {
+    "$oid": "5f72663df3745e620b615d8a"
+  },
+  "createdAt": {
+    "$date": "2020-09-28T23:00:49.587Z"
+  },
+  "updatedAt": {
+    "$date": "2020-09-28T23:00:49.587Z"
+  },
+  "__v": 0
+}]

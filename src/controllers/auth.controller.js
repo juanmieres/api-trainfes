@@ -4,7 +4,7 @@ import config from '../config'
 
 export const signIn = async (req, res) => {
     // validate dni
-    const user = await User({skipTenant: true}).findOne({dni: req.body.dni}).populate('role');
+    const user = await User({skipTenant: true}).findOne({dni: req.body.username});
     if (!user){
         return res.status(400).json({
             message: 'user not found'

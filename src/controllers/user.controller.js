@@ -99,7 +99,7 @@ export const deleteUserById = async (req, res) => {
 
 // user patient
 export const getPatients = async (req, res) => {
-    const role = await Role().findOne({name: 'routines'});
+    const role = await Role().findOne({name: 'patient'});
     const users = await User().find({role:role._id});
     res.status(200).json({data: users})
 }
@@ -143,7 +143,6 @@ export const createPatient = async (req, res) => {
             }
         }
     )
-
 }
 
 export const updatePatientById = async (req, res) => {

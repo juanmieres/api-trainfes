@@ -12,8 +12,8 @@ import routineRoutes from './routes/routine.routes'
 import planningRoutes from './routes/planning.routes'
 
 const app = express();
-createRoles()
-createOrganization()
+// createRoles()
+// createOrganization()
 
 app.set('pkg', pkg)
 app.use(morgan('dev'))

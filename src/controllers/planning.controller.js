@@ -26,9 +26,13 @@ export const createPlanning = async (req, res) => {
         name,
         media,
         dates,
-        dnis,
+        patient,
         routines
     })
+
+    // for (let i = 0; i < dnis.length; i++) {
+    //     dnis[i];
+    // }
 
     await planning.save(
         function(err, result){ 

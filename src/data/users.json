@@ -1,0 +1,82 @@
+[{
+  "_id": {
+    "$oid": "5f722c0868b7294589f8e27b"
+  },
+  "email": "administrador@correo.com",
+  "dni": "172345573",
+  "password": "$2a$10$KF.BP74wST.fy1pfnSQ8ee/nA8nf7pZybJ9FtvPIMOc2tWYm5UfUG",
+  "name": "Administrador",
+  "role": {
+    "$oid": "5f722c0868b7294589f8e278"
+  },
+  "organization": {
+    "$oid": "5f722c0868b7294589f8e27a"
+  },
+  "createdAt": {
+    "$date": "2020-09-28T18:31:36.689Z"
+  },
+  "updatedAt": {
+    "$date": "2020-09-28T18:31:36.689Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f722c0868b7294589f8e27c"
+  },
+  "email": "superusuario@correo.com",
+  "dni": "172876633",
+  "password": "$2a$10$hQCfXgzGKqg.uA/ZjDQDKe/goH0fzzQHuc/VUdQQvohgKv5HEHDeu",
+  "name": "Super Administrador",
+  "role": {
+    "$oid": "5f722c0868b7294589f8e277"
+  },
+  "createdAt": {
+    "$date": "2020-09-28T18:31:36.689Z"
+  },
+  "updatedAt": {
+    "$date": "2020-09-28T18:31:36.689Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f72662bf3745e620b615d89"
+  },
+  "email": "paciente1@correo.com",
+  "dni": "114114685",
+  "password": "$2a$10$PHv.rzFQ0ofK7cmVs4IjP.eDRH4sgwZpSZzO.CkbeXbLACNYS18Hm",
+  "name": "Paciente 1",
+  "role": {
+    "$oid": "5f722c0868b7294589f8e279"
+  },
+  "organization": {
+    "$oid": "5f722c0868b7294589f8e27a"
+  },
+  "createdAt": {
+    "$date": "2020-09-28T22:39:39.236Z"
+  },
+  "updatedAt": {
+    "$date": "2020-09-28T23:11:31.581Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f72663df3745e620b615d8a"
+  },
+  "email": "paciente2@correo.com",
+  "dni": "107363963",
+  "password": "$2a$10$KhGbRLtkypTdt0brlSUoK.BiDhEE3R993lf48PqGoY.PFz.KBFMxK",
+  "name": "Paciente 2",
+  "role": {
+    "$oid": "5f722c0868b7294589f8e279"
+  },
+  "organization": {
+    "$oid": "5f722c0868b7294589f8e27a"
+  },
+  "createdAt": {
+    "$date": "2020-09-28T22:39:57.694Z"
+  },
+  "updatedAt": {
+    "$date": "2020-09-28T23:12:56.079Z"
+  },
+  "__v": 0
+}]
