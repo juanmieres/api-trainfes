@@ -6,7 +6,12 @@
   </a>
 </p>
 
-> Prueba Práctica
+> Elemplo Práctico de Multi-Tenant
+> En una aplicación multi tenant los usuarios acceden a la misma base de datos pero toda la data se encuentra aislada en cada tenant que forman el software completo. De esta manera, los usuarios que corresponden al tenant A solo pueden ver los datos del tenant A. Buscando una analogía común, a grandes rasgos, un software multi tenant se puede entender como un disco duro y cada tenant corresponde a una partición dentro del disco duro.
+** Links de utilidad **
+
+* [link](https://medium.com/@adhasmana/how-we-implemented-multi-tenan cy-in-our-node-js-app-cf9a2515969b)
+* [link](http://nmajor.com/posts/multi-tenancy-with-expressmongoose?fbclid= IwAR3mnqRMrInbegC1PoTN-JWsusKuYvJeTt1b6iR1aVsFytOWtYLPXER V5DQ)
 
 ## Install
 
@@ -29,7 +34,7 @@ npm run dev
 
 ## Documentation
 
-*POSTMAN: [link](https://documenter.getpostman.com/view/9854295/TVKHUvFa)
+* POSTMAN: [link](https://documenter.getpostman.com/view/9854295/TVKHUvFa)
 
 ## Show your support
 
